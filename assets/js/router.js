@@ -5,4 +5,4 @@ const routes = [
     { path: '/*', component: errorNotFound },
 ];
 
-const router = new VueRouter({ /* mode: 'history', */ routes });
+const router = new VueRouter({ mode: 'history', routes });
