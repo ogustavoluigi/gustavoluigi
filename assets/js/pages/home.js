@@ -2,7 +2,7 @@ const home = {
     template: `
     <div class="main" id="page-home">
         <div class="main-body">
-            <h2 id="title-home">Gustavo Luigi 2</h2>
+            <h2 id="title-home">Gustavo Luigi</h2>
             <h2 id="subtitle-home" class="subtitle">Programador e Desenvolvedor Web</h2>
             <p id="catchphrase">Apaixonado por tecnologia, programação e design. Sempre criando soluções criativas e eficientes.
             <p class="paragraph">

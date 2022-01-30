@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
-        <title>Gustavo Luigi 2 - Programador e Desenvolvedor Web</title>
+        <title>Gustavo Luigi - Programador e Desenvolvedor Web</title>
         <meta charset="utf-8">
         <meta name="url-api" content="includes/send-message.php">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,18 +16,18 @@
         <link rel="stylesheet" type="text/css" href="assets/css/layout.css">
         <link rel="stylesheet" type="text/css" href="assets/css/pages.css">
         <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
-        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-        <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue?new=1"></script>
+        <script src="https://unpkg.com/vue-router/dist/vue-router.js?new=1"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1?new=1"></script>
     </head>
     <body>
         <div id="app"></div>
-        <script src="assets/js/pages/layout.js"></script>
-        <script src="assets/js/pages/home.js"></script>
-        <script src="assets/js/pages/about.js"></script>
-        <script src="assets/js/pages/contact.js"></script>
-        <script src="assets/js/pages/not-found.js"></script>
-        <script src="assets/js/router.js"></script>
-        <script src="assets/js/script.js"></script>
+        <script src="assets/js/pages/layout.js?new=1"></script>
+        <script src="assets/js/pages/home.js?new=1"></script>
+        <script src="assets/js/pages/about.js?new=1"></script>
+        <script src="assets/js/pages/contact.js?new=1"></script>
+        <script src="assets/js/pages/not-found.js?new=1"></script>
+        <script src="assets/js/router.js?new=1"></script>
+        <script src="assets/js/script.js?new=1"></script>
     </body>
 </html>
