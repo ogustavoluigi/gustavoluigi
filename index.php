@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
-        <title>Gustavo Luigi - Programador e Desenvolvedor Web</title>
+        <title>Gustavo Luigi 2 - Programador e Desenvolvedor Web</title>
         <meta charset="utf-8">
         <meta name="url-api" content="includes/send-message.php">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
