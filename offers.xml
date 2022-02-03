@@ -1,0 +1,22 @@
+<offers>
+    <offer>
+        <id>731258</id>
+        <title>IPhone 6s</title>
+        <price>R$ 1.230,90</price>
+        <description>Ele é considerado o aparelho custo-benefício da geração atual da fabricante, por ser o mais “acessível” e usar o mesmo processador da versão mais robusta, que lhe garante um excelente desempenho.</description>
+        <weight>194.25</weight>
+        <created_at>2021-07-30 07:51:44 UTC</created_at>
+        <updated_at>2022-01-19 14:01:50 UTC</updated_at>
+        <published_at>2021-07-30 07:51:49 UTC</published_at>
+    </offer>
+    <offer>
+        <id>731258</id>
+        <title>Xiaomi Redmi Note</title>
+        <price>R$ 1.600,00</price>
+        <description>Ele é considerado o aparelho custo-benefício da geração atual da fabricante, por ser o mais “acessível” e usar o mesmo processador da versão mais robusta, que lhe garante um excelente desempenho.</description>
+        <weight>190.1</weight>
+        <created_at>2021-07-30 07:51:44 UTC</created_at>
+        <updated_at>2022-01-19 14:01:50 UTC</updated_at>
+        <published_at>2021-07-30 07:51:49 UTC</published_at>
+    </offer>
+</offers>
