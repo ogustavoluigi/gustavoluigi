@@ -18,7 +18,7 @@
         <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.0/vue.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-router/3.0.0/vue-router.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.5.1/vue-resource.min.js"></script>
     </head>
     <body>
         <div id="app"></div>
