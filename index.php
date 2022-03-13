@@ -18,7 +18,7 @@
         <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
         <script src="https://cdn.jsdelivr.net/npm/vue"></script>
         <script src="https://unpkg.com/vue-router@4.0.14/dist/vue-router.global.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.5.3/vue-resource.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.3"></script>
     </head>
     <body>
         <div id="app"></div>
