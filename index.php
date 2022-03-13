@@ -16,9 +16,9 @@
         <link rel="stylesheet" type="text/css" href="assets/css/layout.css">
         <link rel="stylesheet" type="text/css" href="assets/css/pages.css">
         <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
-        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-        <script src="https://unpkg.com/vue-router@4.0.14/dist/vue-router.global.prod.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.3"></script>
+        <script src="https://cdn.jsdelivr.net/vue/1.0.28/vue.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-router/2.0.0/vue-router.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1?new=1"></script>
     </head>
     <body>
         <div id="app"></div>
