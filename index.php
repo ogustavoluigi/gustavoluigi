@@ -16,7 +16,7 @@
         <link rel="stylesheet" type="text/css" href="assets/css/layout.css">
         <link rel="stylesheet" type="text/css" href="assets/css/pages.css">
         <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
-        <script src="https://cdn.jsdelivr.net/vue/1.0.28/vue.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.0/vue.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-router/3.0.0/vue-router.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1"></script>
     </head>
