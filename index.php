@@ -16,7 +16,7 @@
         <link rel="stylesheet" type="text/css" href="assets/css/layout.css">
         <link rel="stylesheet" type="text/css" href="assets/css/pages.css">
         <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
-        <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
         <script src="https://unpkg.com/vue-router@4.0.14/dist/vue-router.global.prod.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.3"></script>
     </head>
