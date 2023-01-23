@@ -1,29 +1,33 @@
-#page-home {
+#home {
     display: flex;
+    flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
+    background: var(--color-black-darken);
 }
-#page-home *{
-    text-align: center;
-}
+
 #title-home {
     color: var(--color-white-lighten);
     font-family: 'Simplifica';
     font-weight: normal;
     font-size: 72px;
 }
+
 #subtitle-home {
     font-size: 22px;
 }
+
 #catchphrase {
     font-family: 'Simplifica';
     font-size: 28px;
     color: var(--color-white-lighten);
     margin: 1.85rem 0;
 }
-#page-home .paragraph{
+
+#page-home .paragraph {
     color: var(--color-grey-lighten);
 }
-#page-contact .paragraph{
+
+#page-contact .paragraph {
     color: var(--color-white-darken);
 }

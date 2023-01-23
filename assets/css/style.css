@@ -1,63 +1,104 @@
 @import url("fonts/simplifica/resources.css");
 @import url("values/colors.css");
 @import url("values/dimens.css");
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     outline: none;
 }
+
 *::-webkit-scrollbar {
     width: 5px;
     background: transparent;
+    display: none;
 }
-*::-webkit-resizer { background-color: transparent; }
+
+*::-webkit-resizer {
+    background-color: transparent;
+}
+
 *::-webkit-scrollbar-button {
     height: 2px;
     background-color: transparent;
 }
+
 *::-webkit-scrollbar-thumb {
     display: block;
     background-color: var(--color-grey-lighten);
     margin-right: 5px;
 }
-*::-webkit-scrollbar-track { background-color: transparent; }
-*::-webkit-scrollbar-track-piece { background-color: transparent; }
-*::-webkit-scrollbar-corner { background-color: transparent; }
-.fa-envelope { color: var(--color-blue); }
-.fa-whatsapp { color: var(--color-whatsapp); }
-.fa-linkedin { color: var(--color-grey-darken); }
-.fa-linkedin:hover { color: var(--color-grey-lighten); }
-.fa-github { color: var(--color-grey-darken); }
-.fa-github:hover { color: var(--color-grey-lighten); }
+
+*::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+*::-webkit-scrollbar-track-piece {
+    background-color: transparent;
+}
+
+*::-webkit-scrollbar-corner {
+    background-color: transparent;
+}
+
+.fa-envelope {
+    color: var(--color-blue);
+}
+
+.fa-whatsapp {
+    color: var(--color-whatsapp);
+}
+
+.fa-github {
+    color: var(--color-github);
+}
+
+.fa-linkedin {
+    color: var(--color-linkedin);
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-blue-grey);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 .link {
     position: relative;
     color: var(--color-white-lighten);
     text-decoration: none;
     z-index: 3;
 }
+
 .link::after {
     content: "";
     display: block;
     position: relative;
     width: 0%;
     border: solid transparent;
-    border-width: .5rem 0 0;
-    margin-top: -.8rem;
+    border-width: 2px 0 0;
+    margin-top: 0;
     height: 0;
     z-index: 2;
-    border-color: var(--color-yellow);
+    border-color: var(--color-blue-grey);
     transition: .2s .06s all;
 }
-a:hover::after {
+
+.link:hover::after {
     width: 100%;
 }
+
 .subtitle {
     font-size: 24px;
     font-family: 'Lato';
-    color: var(--color-yellow);
+    color: var(--color-blue-grey);
     font-weight: 300;
 }
+
 .paragraph {
     margin: 0 0 20px 0;
     font-family: 'Lato';
@@ -65,12 +106,16 @@ a:hover::after {
     color: var(--color-white-darken);
     text-align: left;
 }
-.subtitle + .paragraph, .paragraph + .paragraph{
+
+.subtitle+.paragraph,
+.paragraph+.paragraph {
     margin: 20px 0;
 }
+
 .tooltip {
     position: relative;
 }
+
 .tooltip .tooltiptext {
     opacity: 0;
     width: 150px;
@@ -89,6 +134,7 @@ a:hover::after {
     z-index: 3;
     transition: .2s .2s opacity;
 }
+
 .tooltiptext::after {
     content: " ";
     position: absolute;
@@ -99,14 +145,17 @@ a:hover::after {
     border-style: solid;
     border-color: transparent transparent var(--color-black-darken) transparent;
 }
+
 .tooltip:hover .tooltiptext {
     opacity: 1;
 }
+
 .form {
     display: flex;
     flex-flow: column nowrap;
     width: 100%;
 }
+
 .form-campo {
     position: relative;
     display: block;
@@ -117,15 +166,19 @@ a:hover::after {
     padding: 1%;
     border-radius: 10px;
 }
+
 .form-campo.to-textarea {
     height: 100px;
 }
+
 .form-campo+.form-campo {
     margin-top: 20px;
 }
+
 .form-campo.ctext:after {
     width: 100%;
 }
+
 .campo-label {
     position: absolute;
     bottom: 4px;
@@ -138,15 +191,18 @@ a:hover::after {
     cursor: text;
     font-family: 'Lato';
 }
+
 .campo-label.blur {
     bottom: 31px;
     font-size: 12px;
     font-weight: 600;
-    color: var(--color-yellow);
+    color: var(--color-blue-grey);
 }
-.campo-label.helper-text{
+
+.campo-label.helper-text {
     color: var(--color-red);
 }
+
 .campo-input {
     position: absolute;
     bottom: 4px;
@@ -163,16 +219,18 @@ a:hover::after {
     cursor: text;
     font-family: 'Lato';
 }
+
 .campo-input.focus {
     color: var(--color-white-lighten);
 }
+
 .form-button {
     align-self: flex-start;
     margin: 20px 0 0 0;
     padding: 12px 24px;
     font-size: 14px;
     color: var(--color-black-darken);
-    background-color: var(--color-yellow);
+    background-color: var(--color-blue-grey);
     border-radius: 50px;
     border: none;
     cursor: pointer;
