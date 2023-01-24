@@ -238,3 +238,7 @@ a:hover {
     white-space: nowrap;
     transition: all .3s;
 }
+
+img[alt="www.000webhost.com"] {
+    display: none !important;
+}
