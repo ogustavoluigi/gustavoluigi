@@ -59,22 +59,22 @@
                         <span class="fa fa-linkedin"></span> <span>gustavoluigi</span>&nbsp;&nbsp;&nbsp;
                         <span class="fa fa-github"></span> <span>ogustavoluigi</span>
                     </p>
-                    <form id="app" class="form" method="post" @submit="formContatoSubmit">
-                        <div class="form-campo" @click="ativaInput(0)">
+                    <form id="app" class="form" method="post" action="/includes/send-message.php">
+                        <div class="form-campo" onclick="ativaInput(0)">
                             <label class="campo-label" id="hname" data-label="Nome">Nome</label>
-                            <input @focus="ativaInput(0)" @blur="desativaInput(0)" autocomplete="off" spellcheck="false" class="campo-input" id="txtUsuario_login" type="text" name="nome" v-model="nome">
+                            <input onfocus="ativaInput(0)" onblur="desativaInput(0)" autocomplete="off" spellcheck="false" class="campo-input" id="txtUsuario_login" type="text" name="nome" v-model="nome">
                         </div>
-                        <div class="form-campo" @click="ativaInput(1)">
+                        <div class="form-campo" onclick="ativaInput(1)">
                             <label class="campo-label" id="hemail" data-label="E-mail">E-mail</label>
-                            <input @focus="ativaInput(1)" @blur="desativaInput(1)" autocomplete="off" spellcheck="false" class="campo-input" id="txtSenha_login" type="text" name="email" v-model="email">
+                            <input onfocus="ativaInput(1)" onblur="desativaInput(1)" autocomplete="off" spellcheck="false" class="campo-input" id="txtSenha_login" type="text" name="email" v-model="email">
                         </div>
-                        <div class="form-campo" @click="ativaInput(2)">
+                        <div class="form-campo" onclick="ativaInput(2)">
                             <label class="campo-label" data-label="Assunto">Assunto</label>
-                            <input @focus="ativaInput(2)" @blur="desativaInput(2)" autocomplete="off" spellcheck="false" class="campo-input" id="txtSenha_login" type="text" name="assunto" v-model="assunto">
+                            <input onfocus="ativaInput(2)" onblur="desativaInput(2)" autocomplete="off" spellcheck="false" class="campo-input" id="txtSenha_login" type="text" name="assunto" v-model="assunto">
                         </div>
-                        <div class="form-campo" @click="ativaInput(3)">
+                        <div class="form-campo" onclick="ativaInput(3)">
                             <label class="campo-label" data-label="Mensagem">Mensagem</label>
-                            <input @focus="ativaInput(3)" @blur="desativaInput(3)" autocomplete="off" spellcheck="false" class="campo-input" id="txtSenha_login" type="text" name="mensagem" v-model="mensagem">
+                            <input onfocus="ativaInput(3)" onblur="desativaInput(3)" autocomplete="off" spellcheck="false" class="campo-input" id="txtSenha_login" type="text" name="mensagem" v-model="mensagem">
                         </div>
                         <button type="submit" id="btn-send-message" class="button btn-default form-button">Enviar</button>
                     </form>
@@ -83,7 +83,8 @@
         </main>
     </div>
     <script>
-        window.addEventListener('load', () => {
+        function pageLoad() {
+
             let anchors = document.querySelectorAll('a[path]');
             let siteTitle = document.querySelector('#site-title');
             if (window.location.pathname != "/") {
@@ -161,6 +162,155 @@
 
                 });
             });
+
+            document.querySelector("#content").addEventListener("DOMMouseScroll", contentMousewheel);
+
+            document.querySelector("#content").addEventListener("mousewheel", contentMousewheel);
+
+            function contentMousewheel(event) {
+
+                event.preventDefault();
+
+                if (document.querySelector('#content').scrollTop % window.innerHeight == 0) {
+
+                    let prevSection = document.querySelector('#content').scrollTop - window.innerHeight;
+                    let nextSection = document.querySelector('#content').scrollTop + window.innerHeight;
+                    let newPosition = ((event.deltaY || event.detail) > 0) ? nextSection : prevSection;
+
+                    document.querySelector('#content').scrollTop = newPosition;
+
+                    if (newPosition >= document.querySelector('#sobre').offsetTop) {
+                        anchors.forEach(item => {
+                            item.classList.remove("active");
+                        });
+                        document.querySelector('a[path="/sobre"]').classList.add("active");
+
+
+                        siteTitle.style.fontSize = "16px";
+                        siteTitle.style.transition = ".1s all";
+                    }
+                    if (newPosition >= document.querySelector('#contato').offsetTop) {
+                        anchors.forEach(item => {
+                            item.classList.remove("active");
+                        });
+                        document.querySelector('a[path="/contato"]').classList.add("active");
+
+                        siteTitle.style.fontSize = "16px";
+                        siteTitle.style.transition = ".1s all";
+                    }
+                    if (newPosition < document.querySelector('#sobre').offsetTop && newPosition < document.querySelector('#contato').offsetTop) {
+                        anchors.forEach(item => {
+                            item.classList.remove("active");
+                        });
+                        document.querySelector('a[path="/"]').classList.add("active");
+
+                        siteTitle.style.fontSize = "32px";
+                        siteTitle.style.transition = ".1s .5s all";
+                    }
+
+                    return false;
+                }
+
+
+            };
+
+
+        }
+        window.addEventListener('resize', pageLoad, true);
+        window.addEventListener('load', pageLoad);
+
+
+        let field = document.querySelectorAll(".form-campo");
+        let label = document.querySelectorAll(".campo-label");
+        let input = document.querySelectorAll(".campo-input");
+        let hname = document.querySelector("#hname");
+        let btnSendMessage = document.querySelector("#btn-send-message");
+
+        function ativaInput(position) {
+            input[position].focus();
+            label[position].classList.add("blur");
+            input[position].classList.add("focus");
+            field[position].classList.add("ctext");
+        }
+
+        function desativaInput(position) {
+            if (input[position].value == "") {
+                label[position].innerHTML = label[position].getAttribute('data-label');
+                label[position].classList.remove("helper-text");
+                label[position].classList.remove("blur");
+                input[position].classList.remove("focus");
+                field[position].classList.remove("ctext");
+            } else {
+                label[position].innerHTML = label[position].getAttribute('data-label');
+                label[position].classList.remove("helper-text");
+            }
+        }
+
+        function desativaAllInput() {
+            field.forEach(function(element, i) {
+                label[i].innerHTML = label[i].getAttribute('data-label');
+                label[i].classList.remove("helper-text");
+                label[i].classList.remove("blur");
+                input[i].classList.remove("focus");
+                field[i].classList.remove("ctext");
+            });
+        }
+
+        function limparCampos() {
+            this.nome = "";
+            this.email = "";
+            this.assunto = "";
+            this.mensagem = "";
+        }
+
+        document.querySelector('form').addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            let url = this.getAttribute('action');
+
+            const regexNome = /^([A-Za-z]|\s)+$/i;
+            const regexEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/i;
+
+            if (!regexNome.test(this.elements.nome.value)) {
+                hname.classList.add("helper-text");
+                hname.innerHTML = `<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>&nbsp;Coloque seu nome!`;
+                return false;
+            }
+            if (!regexEmail.test(this.elements.email.value)) {
+                hemail.classList.add("helper-text");
+                hemail.innerHTML = `<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>&nbsp;Coloque um e-mail válido!`;
+                return false;
+            }
+
+            btnSendMessage.innerHTML = `<i class="fa fa-circle-o-notch fa-spin"></i>&nbsp;Enviando`;
+
+            let formData = new FormData();
+            formData.append('name', this.nome);
+            formData.append('email', this.email);
+            formData.append('subject', this.assunto);
+            formData.append('message', this.mensagem);
+
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = function() {
+                let response = JSON.parse(this.response);
+                if (response.success) {
+                    limparCampos();
+                    desativaAllInput();
+                    btnSendMessage.innerHTML = `Mensagem Enviada`;
+                } else btnSendMessage.innerHTML = `Mensagem não Enviada`;
+                setTimeout(function() {
+                    btnSendMessage.innerHTML = `Enviar`
+                }, 5000);
+            }
+            xhttp.onerror = function() {
+                let response = JSON.parse(this.response);
+                btnSendMessage.innerHTML = `Mensagem não Enviada`;
+                setTimeout(function() {
+                    btnSendMessage.innerHTML = `Enviar`
+                }, 5000);
+            }
+            xhttp.open("POST", url, true);
+            xhttp.send("email=teste@teste.com");
         });
     </script>
 </body>
