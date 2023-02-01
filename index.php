@@ -50,8 +50,8 @@
         <br>
         <h2 class="subtitle" style="color: var(--color-blue-grey);">Contatos</h2>
         <p class="paragraph">
-            <span class="fa fa-envelope"></span> <span>contato@gustavoluigi.com.br</span><br>
-            <span class="fa fa-whatsapp"></span> <span>(11) 952976713</span><br>
+            <a href="mailto:contato@gustavoluigi.com.br"><span class="fa fa-envelope"></span> <span>contato@gustavoluigi.com.br</span></a><br>
+            <a href="https://api.whatsapp.com/send?phone=5511952976713" target="_blank"><span class="fa fa-whatsapp"></span> <span>(11) 952976713</span></a><br>
             <a href="https://br.linkedin.com/in/gustavoluigi" target="_blank"><span class="fa fa-linkedin"></span> <span>gustavoluigi</span></a><br>
             <a href="https://github.com/ogustavoluigi" target="_blank"><span class="fa fa-github"></span> <span>ogustavoluigi</span></a>
         </p>
