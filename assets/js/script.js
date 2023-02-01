@@ -15,14 +15,17 @@ document.querySelector('form').addEventListener("submit", function (e) {
     let btnSendMessage = document.querySelector("#btn-send-message");
     if (nameField.getVal() == "") {
         nameField.showMessage("Digite seu nome!");
+        nameField.setFocus();
         return false;
     }
     if (!regexNome.test(nameField.getVal())) {
         nameField.showMessage("Acho que esse não é seu nome!");
+        nameField.setFocus();
         return false;
     }
     if (!regexEmail.test(emailField.getVal())) {
         emailField.showMessage("Coloque um e-mail válido!");
+        emailField.setFocus();
         return false;
     }
     btnSendMessage.innerHTML = `<i style="color: var(--color-white-lighten);" class="fa fa-circle-o-notch fa-spin"></i>&nbsp;Enviando`;
