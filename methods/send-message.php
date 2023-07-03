@@ -8,22 +8,24 @@ use PHPMailer\PHPMailer\Exception;
 
 $mail = new PHPMailer();
 
+header("Content-Type: application/json");
+
 try {
-    $name = isset($_POST['name']) ? $_POST['name'] : "";
-    $email = isset($_POST['email']) ? $_POST['email'] : "";
-    $subject = isset($_POST['subject']) ? $_POST['subject'] : "";
-    $message = isset($_POST['message']) ? $_POST['message'] : "";
+    $name = $_POST['name'] ?? "";
+    $email = $_POST['email'] ?? "";
+    $subject = $_POST['subject'] ?? "";
+    $message = $_POST['message'] ?? "";
 
     $mail->IsSMTP();
-    $mail->Host = 'smtp.umbler.com';
+    $mail->Host = 'mail.gustavoluigi.com.br';
     $mail->SMTPAuth = true;
     $mail->Username = 'contato@gustavoluigi.com.br';
-    $mail->Password = 'umblerGaGa10!!';
+    $mail->Password = 'superGaGa10!!';
     $mail->FromName = 'Gustavo Luigi';
     $mail->From = "contato@gustavoluigi.com.br";
     $mail->AddAddress('contato@gustavoluigi.com.br', 'Gustavo Luigi');
-    $mail->Port = 587;
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+    $mail->Port = 465;
 
     $mail->CharSet = 'UTF-8';
     $mail->IsHTML(true);
@@ -31,14 +33,8 @@ try {
     $mail->Body = "<b>Nome:</b> $name<br><b>E-mail:</b> $email<br><b>Mensagem:</b> $message";
     $mail->AltBody = "Nome: $name<br>E-mail: $email<br>Mensagem: $message";
 
-    if ($mail->Send()) {
-        header("Content-Type: application/json");
-        echo json_encode(['success' => true]);
-    } else {
-        header("Content-Type: application/json");
-        echo json_encode(['success' => false, 'message' => "Error: " . $mail->ErrorInfo]);
-    }
+    if ($mail->Send()) echo json_encode(['success' => true]);
+    else echo json_encode(['success' => false, 'message' => "Error: " . $mail->ErrorInfo]);
 } catch (Exception $e) {
-    header("Content-Type: application/json");
     echo json_encode(['success' => false, 'message' => $mail->ErrorInfo]);
 }
