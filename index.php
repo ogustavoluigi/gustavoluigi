@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <header style="display: flex; justify-content: end; padding: 2.25rem;">
+    <header class="container" style="display: flex; justify-content: end; padding: 2.25rem 0;">
         <button id="toggle-theme-button" data-theme="light" class="basic-button">
             <svg width="30" height="30" fill="#2e3438" xmlns="http://www.w3.org/2000/svg">
                 <path d="M14.5 19.938a5.438 5.438 0 1 0 0-10.876 5.438 5.438 0 0 0 0 10.876Zm0 1.812a7.25 7.25 0 1 1 0-14.5 7.25 7.25 0 0 1 0 14.5Zm0-19.938a.906.906 0 0 1 .906.907V4.53a.906.906 0 1 1-1.812 0V2.72a.906.906 0 0 1 .906-.906Zm0 21.75a.906.906 0 0 1 .906.907v1.812a.906.906 0 1 1-1.812 0V24.47a.906.906 0 0 1 .906-.907ZM5.528 5.529a.906.906 0 0 1 1.282 0L8.09 6.81A.906.906 0 1 1 6.81 8.09L5.528 6.81a.906.906 0 0 1 0-1.282ZM20.91 20.91a.906.906 0 0 1 1.281 0l1.282 1.281a.906.906 0 0 1-1.282 1.282L20.91 22.19a.906.906 0 0 1 0-1.281ZM1.813 14.5a.906.906 0 0 1 .906-.906H4.53a.906.906 0 1 1 0 1.812H2.72a.906.906 0 0 1-.906-.906Zm21.75 0a.906.906 0 0 1 .906-.906h1.812a.906.906 0 1 1 0 1.812H24.47a.906.906 0 0 1-.907-.906ZM5.527 23.472a.906.906 0 0 1 0-1.282L6.81 20.91A.906.906 0 0 1 8.09 22.19L6.81 23.472a.906.906 0 0 1-1.282 0ZM20.91 8.09a.906.906 0 0 1 0-1.281l1.281-1.282a.907.907 0 0 1 1.282 1.282L22.19 8.09a.906.906 0 0 1-1.281 0Z" fill="#currentColor"></path>
@@ -23,31 +23,32 @@
     </header>
     <div id="container" class="container">
         <main>
-            <div style="display: flex; align-items: center;">
+            <div style="display: flex; align-items: center; margin-bottom: 2.25rem;">
                 <div>
                     <h1 style="line-height: 1.2; font-size: 2.2rem; font-weight: 700; color: var(--text-color)">Gustavo Luigi</h1>
-                    <h2 style="line-height: 1.2; font-size: 1rem; color: var(--secondary-color); font-weight: 500;">Back-end Developer</h2>
+                    <h2 style="line-height: 1.2; font-size: 1rem; color: var(--secondary-color); font-weight: 500;">Desenvolvedor back-end</h2>
+                    <br>
+                    <p class="paragraph">Soluções para web. Desenvolvimento e depuração de sites, aplicativos e sistemas para desktop e mobile.</p>
                 </div>
             </div>
-            <br><br>
             <h3 class="subtitle">Envie uma Mensagem</h3>
-            <br>
             <form id="contact-form" method="post" action="/methods/send-message.php">
-                <input type="text" autocomplete="off" spellcheck="false" name="name" label="Nome">
-                <br>
-                <input type="text" autocomplete="off" spellcheck="false" name="email" label="E-mail">
-                <br>
-                <input type="text" autocomplete="off" spellcheck="false" name="subject" label="Assunto">
-                <br>
-                <input type="text" autocomplete="off" spellcheck="false" name="message" label="Mensagem">
-                <br>
-                <button type="submit" id="btn-send-message" class="button">Enviar</button>
+                <div style="margin-top: 1.125rem;">
+                    <input type="text" autocomplete="off" spellcheck="false" name="name" label="Nome" style="margin-top: 1.125rem;">
+                </div>
+                <div style="margin-top: 1.125rem;">
+                    <input type="text" autocomplete="off" spellcheck="false" name="email" label="E-mail" style="margin-top: 1.125rem;">
+                </div>
+                <div style="margin-top: 1.125rem;">
+                    <input type="text" autocomplete="off" spellcheck="false" name="subject" label="Assunto" style="margin-top: 1.125rem;">
+                </div>
+                <div style="margin-top: 1.125rem;">
+                    <input type="text" autocomplete="off" spellcheck="false" name="message" label="Mensagem">
+                </div>
+                <button type="submit" id="btn-send-message" class="button" style="margin-top: 2.25rem;">Enviar</button>
             </form>
         </main>
         <aside>
-            <h3 class="subtitle">Sobre Mim</h3>
-            <p class="paragraph">Soluções para web. Desenvolvimento e depuração de sites, aplicativos e sistemas para desktop e mobile.</p>
-            <br>
             <h2 class="subtitle">Tecnologias</h2>
             <p class="paragraph">Git, HTML, CSS, XML, JavaScript, JQuery, Vue.js, PHP, Laravel, Java, MySQL, SQL Server, SQLite, HSQL.</p>
             <br>
