@@ -8,10 +8,22 @@ class FloatingLabel {
         const label = document.createElement("label");
         label.classList.add('master-label');
         label.textContent = this.element.getAttribute('label');
-        const input = document.createElement("input");
+        const input = document.createElement(this.element.tagName);
         input.classList.add('master-input');
         input.addEventListener("focus", function () { object.setFocus(); });
         input.addEventListener("blur", function () { object.setBlur(); });
+
+        if (this.element.tagName === "TEXTAREA") input.addEventListener("input", (event) => {
+            if (event.inputType === 'deleteContentBackward') input.style.height = null;
+
+            let rowCount = 0;
+
+            if ((input.scrollHeight % 16) === 0) rowCount = input.scrollHeight / 16;
+            else rowCount = (input.scrollHeight - 3) / 16;
+
+            input.style.height = 3 + (rowCount * 16) + "px";
+        });
+
         box.appendChild(label);
         box.appendChild(input);
         for (let attribute of this.element.attributes) { input.setAttribute(attribute.nodeName, attribute.nodeValue); }
@@ -23,29 +35,30 @@ class FloatingLabel {
         let style = document.createElement('style');
         let declarations = document.createTextNode(`
             .master-field {
-                position: relative;
                 display: block;
                 width: 100%;
-                height: 50px;
-                border-bottom: 1px solid #ebebeb;
+                background: var(--card-color);
+                border-radius: 6px;
+                padding: 10px;
                 cursor: text;
             }
             .master-field.not-empty:after {
                 width: 100%;
             }
             .master-label {
-                position: absolute;
-                bottom: 4px;
+                transform: translateY(20px);
                 display: block;
-                width: 98%;
+                width: 100%;
+                height: 18px;
+                padding-bottom:5px;
                 color: var(--secondary-color);
                 font-size: 1rem;
                 z-index: 3;
-                transition: all .3s .1s;
+                transition: font-size .3s .1s, font-weight .3s .1s, transform .3s .1s;
                 cursor: text;
             }
             .master-field.not-empty .master-label {
-                bottom: 31px;
+                transform: translateY(0px);
                 font-size: .8rem;
                 font-weight: 600;
                 color: var(--secondary-color);
@@ -54,10 +67,11 @@ class FloatingLabel {
                 color: #f44336;
             }
             .master-input {
-                position: absolute;
-                bottom: 4px;
                 display: block;
-                width: 98%;
+                width: 100%;
+                line-height: 16px !important;
+                height: 19px;
+                resize: none;
                 outline: none;
                 border: none;
                 color: var(--text-color);
@@ -65,8 +79,8 @@ class FloatingLabel {
                 font-weight: normal;
                 background-color: transparent;
                 z-index: 2;
-                transition: all .1s .1s;
                 cursor: text;
+                overflow: hidden;
             }
         `);
         style.setAttribute('type', 'text/css');
@@ -81,7 +95,12 @@ class FloatingLabel {
     }
 
     setBlur() {
-        if (this.input.value == "") this.box.classList.remove("not-empty");
+        if (this.input.value == "") {
+            this.box.classList.remove("not-empty");
+            this.box.style.height = null;
+            this.input.style.height = null;
+            this.label.style.bottom = null;
+        }
         this.label.innerHTML = this.element.getAttribute('label');
         this.label.classList.remove("danger-message");
     }
