@@ -19,12 +19,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="assets/img/favicon.png" />
     <link rel="stylesheet" type="text/css" href="assets/css/fonts/poppins.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 
 <body>
     <header class="container" style="display: flex; justify-content: end; padding: 2.25rem 0;">
-        <button id="toggle-theme-button" data-theme="light" class="basic-button" aria-label="Trocar Tema">
+        <button id="toggle-theme-button" data-theme="light" class="basic-button clickable" aria-label="Trocar Tema">
             <svg width="30" height="30" fill="#2e3438" xmlns="http://www.w3.org/2000/svg">
                 <path d="M14.5 19.938a5.438 5.438 0 1 0 0-10.876 5.438 5.438 0 0 0 0 10.876Zm0 1.812a7.25 7.25 0 1 1 0-14.5 7.25 7.25 0 0 1 0 14.5Zm0-19.938a.906.906 0 0 1 .906.907V4.53a.906.906 0 1 1-1.812 0V2.72a.906.906 0 0 1 .906-.906Zm0 21.75a.906.906 0 0 1 .906.907v1.812a.906.906 0 1 1-1.812 0V24.47a.906.906 0 0 1 .906-.907ZM5.528 5.529a.906.906 0 0 1 1.282 0L8.09 6.81A.906.906 0 1 1 6.81 8.09L5.528 6.81a.906.906 0 0 1 0-1.282ZM20.91 20.91a.906.906 0 0 1 1.281 0l1.282 1.281a.906.906 0 0 1-1.282 1.282L20.91 22.19a.906.906 0 0 1 0-1.281ZM1.813 14.5a.906.906 0 0 1 .906-.906H4.53a.906.906 0 1 1 0 1.812H2.72a.906.906 0 0 1-.906-.906Zm21.75 0a.906.906 0 0 1 .906-.906h1.812a.906.906 0 1 1 0 1.812H24.47a.906.906 0 0 1-.907-.906ZM5.527 23.472a.906.906 0 0 1 0-1.282L6.81 20.91A.906.906 0 0 1 8.09 22.19L6.81 23.472a.906.906 0 0 1-1.282 0ZM20.91 8.09a.906.906 0 0 1 0-1.281l1.281-1.282a.907.907 0 0 1 1.282 1.282L22.19 8.09a.906.906 0 0 1-1.281 0Z" fill="#currentColor"></path>
             </svg>
@@ -34,39 +34,36 @@
         <main>
             <div style="display: flex; align-items: center; margin-bottom: var(--medium-spacing);">
                 <div>
-                    <h1 style="line-height: 1.2; font-size: 2.2rem; font-weight: 700; color: var(--text-color)">Gustavo Luigi</h1>
+                    <h1 style="line-height: 1.2; font-size: 2.2rem; font-weight: 700; color:var(--text-color)">Gustavo Luigi</h1>
                     <h2 style="line-height: 1.2; font-size: 1rem; color: var(--secondary-color); font-weight: 500;">Desenvolvedor back-end</h2>
                     <br>
                     <p class="paragraph">Entusiasta de programação e tecnologia, especializado em soluções criativas e eficazes. Como desenvolvedor web, crio e depuro sites, aplicativos e sistemas.</p>
                 </div>
             </div>
-            <h3 class="subtitle">Envie uma Mensagem</h3>
-            <form id="contact-form" method="post" action="/methods/send-message.php">
+            <div style="margin-bottom: var(--medium-spacing);">
+                <h2 class="subtitle" style="margin-bottom:var(--small-spacing);">Tecnologias</h2>
+                <p style="color:var(--text-color);">Git, HTML, CSS, JavaScript, JQuery, Vue.js, PHP, Laravel, SQL, MySQL, SQLite.</p>
+            </div>
+            <div>
+                <h2 class="subtitle" style="margin-top: var(--medium-spacing);">Principais Trabalhos</h2>
                 <div style="margin-top: var(--small-spacing);">
-                    <input type="text" autocomplete="off" spellcheck="false" name="name" label="Nome" aria-label="Nome" style="margin-top: var(--small-spacing);">
+                    <h3 style="color: var(--text-color); margin-bottom:var(--xx-small-spacing);">ProFreela</h3>
+                    <p style="color: var(--text-color); margin-bottom:var(--xx-small-spacing);">Um site inovador agrega oportunidades de trabalho freelancer de diferentes plataformas populares, como Workana, VintePila e 99Freelas, simplificando a busca por projetos independentes.</p>
+                    <a target="_blank" href="https://profreela.com">https://profreela.com</a>
                 </div>
                 <div style="margin-top: var(--small-spacing);">
-                    <input type="text" autocomplete="off" spellcheck="false" name="email" label="E-mail" aria-label="E-mail" style="margin-top: var(--small-spacing);">
+                    <h3 style="color: var(--text-color); margin-bottom:var(--xx-small-spacing);">Lumino</h3>
+                    <p style="color:var(--text-color); margin-bottom:var(--xx-small-spacing);">Um sistema gerador de CMS (Content Management System), elaborado para proporcionar uma experiência de gerenciamento de conteúdo simples e eficaz, com destaque para os seguintes aspectos técnicos e funcionais.</p>
+                    <a target="_blank" href="https://www.getlumino.com/">https://www.getlumino.com/</a>
                 </div>
-                <div style="margin-top: var(--small-spacing);">
-                    <input type="text" autocomplete="off" spellcheck="false" name="subject" label="Assunto" aria-label="Assunto" style="margin-top: var(--small-spacing);">
-                </div>
-                <div style="margin-top: var(--small-spacing);">
-                    <input type="text" autocomplete="off" spellcheck="false" name="message" label="Mensagem" aria-label="Mensagem" style="margin-top: var(--small-spacing);">
-                </div>
-                <button type="submit" id="btn-send-message" class="button" style="margin-top: var(--small-spacing);" aria-label="Enviar Mensagem">Enviar</button>
-            </form>
+            </div>
         </main>
         <aside>
-            <div style="margin-bottom: var(--medium-spacing);">
-                <h2 class="subtitle">Tecnologias</h2>
-                <p class="paragraph">Git, HTML, CSS, XML, JavaScript, JQuery, Vue.js, PHP, Laravel, Java, MySQL, SQL Server, SQLite, HSQL.</p>
-            </div>
             <div>
                 <h2 class="subtitle" style="margin-bottom: var(--small-spacing);">Contatos</h2>
                 <div id="contacts">
                     <a class="contact" href="mailto:contato@gustavoluigi.com.br">
-                        <svg style="width: 20px;" xmlns="http://www.w3.org/2000/svg" height="16" fill="currentColor" class="bi bi-envelope-at" viewBox="0 0 16 16">
+                        <svg style="width: 20px;" xmlns="http://www.w3.org/2000/svg" height="16" fill="currentColor" class="bi bi-envelope-at" viewBox="0 -2 16 16">
                             <path d="M2 2a2 2 0 0 0-2 2v8.01A2 2 0 0 0 2 14h5.5a.5.5 0 0 0 0-1H2a1 1 0 0 1-.966-.741l5.64-3.471L8 9.583l7-4.2V8.5a.5.5 0 0 0 1 0V4a2 2 0 0 0-2-2H2Zm3.708 6.208L1 11.105V5.383l4.708 2.825ZM1 4.217V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.217l-7 4.2-7-4.2Z" />
                             <path d="M14.247 14.269c1.01 0 1.587-.857 1.587-2.025v-.21C15.834 10.43 14.64 9 12.52 9h-.035C10.42 9 9 10.36 9 12.432v.214C9 14.82 10.438 16 12.358 16h.044c.594 0 1.018-.074 1.237-.175v-.73c-.245.11-.673.18-1.18.18h-.044c-1.334 0-2.571-.788-2.571-2.655v-.157c0-1.657 1.058-2.724 2.64-2.724h.04c1.535 0 2.484 1.05 2.484 2.326v.118c0 .975-.324 1.39-.639 1.39-.232 0-.41-.148-.41-.42v-2.19h-.906v.569h-.03c-.084-.298-.368-.63-.954-.63-.778 0-1.259.555-1.259 1.4v.528c0 .892.49 1.434 1.26 1.434.471 0 .896-.227 1.014-.643h.043c.118.42.617.648 1.12.648Zm-2.453-1.588v-.227c0-.546.227-.791.573-.791.297 0 .572.192.572.708v.367c0 .573-.253.744-.564.744-.354 0-.581-.215-.581-.8Z" />
                         </svg>
@@ -90,22 +87,34 @@
                         </svg>
                         <span>ogustavoluigi</span>
                     </a>
+                    <h3 style="margin-top: var(--medium-spacing); color:var(--text-color);">Envie uma Mensagem</h3>
+                    <form id="contact-form" method="post" action="./methods/send-message.php">
+                        <div style="margin-top: var(--small-spacing);">
+                            <input type="text" autocomplete="off" spellcheck="false" name="email" label="E-mail" aria-label="E-mail">
+                        </div>
+                        <div style="margin-top: var(--small-spacing);">
+                            <textarea autocomplete="off" spellcheck="false" rows="1" name="message" label="Mensagem" aria-label="Mensagem"></textarea>
+                        </div>
+                        <button type="submit" id="btn-send-message" class="button clickable" style="margin-top: var(--small-spacing);" aria-label="Enviar Mensagem">Enviar</button>
+                    </form>
                 </div>
             </div>
         </aside>
     </div>
-    <script defer src="assets/libs/floating-label.min.js"></script>
+    <script src="assets/libs/floating-label.js"></script>
     <script>
-        window.addEventListener("load", function() {
+        document.addEventListener("DOMContentLoaded", function() {
             function setLightTheme() {
                 document.documentElement.style.setProperty('--text-color', '#212529');
                 document.documentElement.style.setProperty('--secondary-color', '#5f5f5f');
+                document.documentElement.style.setProperty('--card-color', '#eceff1');
                 document.documentElement.style.setProperty('--background-color', '#ffffff');
             }
 
             function setDarkTheme() {
                 document.documentElement.style.setProperty('--text-color', '#ffffff');
                 document.documentElement.style.setProperty('--secondary-color', '#aeaeae');
+                document.documentElement.style.setProperty('--card-color', '#37474f');
                 document.documentElement.style.setProperty('--background-color', '#212529');
             }
 
@@ -113,71 +122,59 @@
                 let currentTheme = this.getAttribute("data-theme");
                 if (currentTheme == "light") {
                     this.setAttribute("data-theme", "dark");
-                    this.innerHTML = `<svg width="30" height="30" fill="#ffffff" xmlns="http://www.w3.org/2000/svg">
-                    <path d="m15.22 6.03 2.53-1.94L14.56 4 13.5 1l-1.06 3-3.19.09 2.53 1.94-.91 3.06 2.63-1.81 2.63 1.81-.91-3.06ZM19.61 12.25 21.25 11l-2.06-.05L18.5 9l-.69 1.95-2.06.05 1.64 1.25-.59 1.98 1.7-1.17 1.7 1.17-.59-1.98Z" fill="#currentColor"></path>
-                    <path d="M7 6a10.994 10.994 0 0 0 12.56 10.89C17.95 19.36 15.17 21 12 21a9 9 0 0 1-9-9c0-3.17 1.64-5.95 4.11-7.56C7.04 4.95 7 5.47 7 6Z" stroke="#currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                </svg>`;
+                    this.innerHTML = `<svg width="22" height="25" fill="#ffffff" xmlns="http://www.w3.org/2000/svg">
+                        <path d="m15.22 6.03 2.53-1.94L14.56 4 13.5 1l-1.06 3-3.19.09 2.53 1.94-.91 3.06 2.63-1.81 2.63 1.81-.91-3.06ZM19.61 12.25 21.25 11l-2.06-.05L18.5 9l-.69 1.95-2.06.05 1.64 1.25-.59 1.98 1.7-1.17 1.7 1.17-.59-1.98Z" fill="#currentColor"></path>
+                        <path d="M7 6a10.994 10.994 0 0 0 12.56 10.89C17.95 19.36 15.17 21 12 21a9 9 0 0 1-9-9c0-3.17 1.64-5.95 4.11-7.56C7.04 4.95 7 5.47 7 6Z" stroke="#currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>`;
                     setDarkTheme();
                 } else if (currentTheme == "dark") {
                     this.setAttribute("data-theme", "light");
                     this.innerHTML = `<svg width="30" height="30" fill="#2e3438" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M14.5 19.938a5.438 5.438 0 1 0 0-10.876 5.438 5.438 0 0 0 0 10.876Zm0 1.812a7.25 7.25 0 1 1 0-14.5 7.25 7.25 0 0 1 0 14.5Zm0-19.938a.906.906 0 0 1 .906.907V4.53a.906.906 0 1 1-1.812 0V2.72a.906.906 0 0 1 .906-.906Zm0 21.75a.906.906 0 0 1 .906.907v1.812a.906.906 0 1 1-1.812 0V24.47a.906.906 0 0 1 .906-.907ZM5.528 5.529a.906.906 0 0 1 1.282 0L8.09 6.81A.906.906 0 1 1 6.81 8.09L5.528 6.81a.906.906 0 0 1 0-1.282ZM20.91 20.91a.906.906 0 0 1 1.281 0l1.282 1.281a.906.906 0 0 1-1.282 1.282L20.91 22.19a.906.906 0 0 1 0-1.281ZM1.813 14.5a.906.906 0 0 1 .906-.906H4.53a.906.906 0 1 1 0 1.812H2.72a.906.906 0 0 1-.906-.906Zm21.75 0a.906.906 0 0 1 .906-.906h1.812a.906.906 0 1 1 0 1.812H24.47a.906.906 0 0 1-.907-.906ZM5.527 23.472a.906.906 0 0 1 0-1.282L6.81 20.91A.906.906 0 0 1 8.09 22.19L6.81 23.472a.906.906 0 0 1-1.282 0ZM20.91 8.09a.906.906 0 0 1 0-1.281l1.281-1.282a.907.907 0 0 1 1.282 1.282L22.19 8.09a.906.906 0 0 1-1.281 0Z" fill="#currentColor"></path>
-                </svg>`;
+                        <path d="M14.5 19.938a5.438 5.438 0 1 0 0-10.876 5.438 5.438 0 0 0 0 10.876Zm0 1.812a7.25 7.25 0 1 1 0-14.5 7.25 7.25 0 0 1 0 14.5Zm0-19.938a.906.906 0 0 1 .906.907V4.53a.906.906 0 1 1-1.812 0V2.72a.906.906 0 0 1 .906-.906Zm0 21.75a.906.906 0 0 1 .906.907v1.812a.906.906 0 1 1-1.812 0V24.47a.906.906 0 0 1 .906-.907ZM5.528 5.529a.906.906 0 0 1 1.282 0L8.09 6.81A.906.906 0 1 1 6.81 8.09L5.528 6.81a.906.906 0 0 1 0-1.282ZM20.91 20.91a.906.906 0 0 1 1.281 0l1.282 1.281a.906.906 0 0 1-1.282 1.282L20.91 22.19a.906.906 0 0 1 0-1.281ZM1.813 14.5a.906.906 0 0 1 .906-.906H4.53a.906.906 0 1 1 0 1.812H2.72a.906.906 0 0 1-.906-.906Zm21.75 0a.906.906 0 0 1 .906-.906h1.812a.906.906 0 1 1 0 1.812H24.47a.906.906 0 0 1-.907-.906ZM5.527 23.472a.906.906 0 0 1 0-1.282L6.81 20.91A.906.906 0 0 1 8.09 22.19L6.81 23.472a.906.906 0 0 1-1.282 0ZM20.91 8.09a.906.906 0 0 1 0-1.281l1.281-1.282a.907.907 0 0 1 1.282 1.282L22.19 8.09a.906.906 0 0 1-1.281 0Z" fill="#currentColor"></path>
+                    </svg>`;
                     setLightTheme();
                 }
             });
 
             let contactForm = document.querySelector("#contact-form");
-            let nameField = new FloatingLabel(contactForm.name);
             let emailField = new FloatingLabel(contactForm.email);
-            let subjectField = new FloatingLabel(contactForm.subject);
             let messageField = new FloatingLabel(contactForm.message);
 
             document.querySelector('form').addEventListener("submit", function(event) {
                 event.preventDefault();
                 let url = this.getAttribute('action');
-                const regexNome = /^([A-Za-z|\W]|\s)+$/i;
+                
                 const regexEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/i;
                 let btnSendMessage = document.querySelector("#btn-send-message");
-                if (nameField.getVal() == "") {
-                    nameField.showMessage("Digite seu nome!");
-                    nameField.setFocus();
-                    return false;
-                }
-                if (!regexNome.test(nameField.getVal())) {
-                    nameField.showMessage("Acho que esse não é seu nome!");
-                    nameField.setFocus();
-                    return false;
-                }
+                btnSendMessage.disabled = true;
                 if (!regexEmail.test(emailField.getVal())) {
                     emailField.showMessage("Coloque um e-mail válido!");
                     emailField.setFocus();
                     return false;
                 }
                 btnSendMessage.innerHTML = `<i style="color: var(--color-white-lighten);" class="fa fa-circle-o-notch fa-spin"></i>&nbsp;Enviando`;
-                const xhttp = new XMLHttpRequest();
-                xhttp.onload = function() {
-                    let response = JSON.parse(this.response);
+
+                fetch(url, {method: "POST", headres: { "Content-Type": "application/json" }, body: JSON.stringify({
+                    email: emailField.getVal(),
+                    message: messageField.getVal()
+                })}).then(response => response.json()).then(response => {
+                    btnSendMessage.disabled = false;
                     if (response.success) {
-                        nameField.setVal("");
                         emailField.setVal("");
-                        subjectField.setVal("");
                         messageField.setVal("");
                         btnSendMessage.innerHTML = `Mensagem Enviada`;
                     } else btnSendMessage.innerHTML = `Mensagem não Enviada`;
+
                     setTimeout(function() {
                         btnSendMessage.innerHTML = `Enviar`
                     }, 5000);
-                }
-                xhttp.onerror = function() {
+                }).catch(error => {
+                    btnSendMessage.disabled = false;
                     btnSendMessage.innerHTML = `Mensagem não Enviada`;
                     setTimeout(function() {
                         btnSendMessage.innerHTML = `Enviar`
                     }, 5000);
-                }
-                xhttp.open("POST", url, true);
-                xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-                xhttp.send(`name=${nameField.getVal()}&email=${emailField.getVal()}&subject=${subjectField.getVal()}&message=${messageField.getVal()}`);
+                });
             });
         });
     </script>
