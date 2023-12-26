@@ -229,12 +229,18 @@ main {
 
 /* clickable effect */
 
-#toggle-theme-button {
+#toggle-theme-button,
+#print-page-button {
     height: 30px;
     width: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+#toggle-theme-button svg,
+#print-page-button svg {
+    fill: var(--text-color);
 }
 
 @media only screen and (max-width: 960px) {}
@@ -252,7 +258,7 @@ main {
     }
 
     .contact {
-        padding: var(--small-spacing) 0;
+        padding: var(--x-small-spacing) 0;
     }
 }
 
@@ -266,37 +272,61 @@ main {
 
 @media only screen and (max-width:400px) {}
 
-@media (min-width: 576px) {
-
+@media (min-width: 280px) {
     .container {
-        max-width: 540px
+        max-width: 250px;
+    }
+}
+
+@media (min-width: 320px) {
+    .container {
+        max-width: 290px;
+    }
+}
+
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
     }
 }
 
 @media (min-width: 768px) {
-
     .container {
-        max-width: 720px
+        max-width: 720px;
     }
 }
 
 @media (min-width: 992px) {
-
     .container {
-        max-width: 960px
+        max-width: 960px;
     }
 }
 
 @media (min-width: 1200px) {
-
     .container {
-        max-width: 1140px
+        max-width: 1140px;
     }
 }
 
 @media (min-width: 1400px) {
-
     .container {
-        max-width: 1320px
+        max-width: 1320px;
+    }
+}
+
+@media print {
+    @page {
+        size: auto;
+        margin: 0;
+    }
+
+    .clickable,
+    form {
+        display: none !important;
+    }
+
+    #container {
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr;
     }
 }
