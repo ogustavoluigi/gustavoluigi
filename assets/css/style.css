@@ -320,6 +320,17 @@ main {
         margin: 0;
     }
 
+    :root {
+        --large-spacing: 4rem;
+        --medium-spacing: 2rem;
+        --small-spacing: 1rem;
+        --small-negative-spacing: -1rem;
+        --x-small-spacing: .5rem;
+        --x-small-negative-spacing: -.5rem;
+        --xx-small-spacing: .25rem;
+        --xx-small-negative-spacing: -.25rem;
+    }
+
     .clickable,
     form {
         display: none !important;
@@ -328,5 +339,9 @@ main {
     #container {
         grid-template-rows: 1fr;
         grid-template-columns: 1fr;
+    }
+
+    .paragraph {
+        line-height: 1.4;
     }
 }
