@@ -195,6 +195,22 @@ main {
     padding: var(--xx-small-spacing) 0;
 }
 
+#load-box {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    z-index: 3;
+    opacity: 1;
+    transition: opacity 300ms;
+}
+
+#load-box.loaded {
+    opacity: 0;
+}
+
 /* clickable effect */
 
 .clickable {
@@ -202,6 +218,10 @@ main {
     /* color: var(--primary-color);
     fill: var(--primary-color); */
     cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 .clickable:hover::before {

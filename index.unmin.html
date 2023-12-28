@@ -23,6 +23,7 @@
 </head>
 
 <body>
+    <div id="load-box"></div>
     <header class="container" style="display: flex; justify-content: end; padding: 2.25rem 0;">
         <button id="print-page-button" class="basic-button clickable" aria-label="Imprimir Página">
             <svg height="26" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
@@ -113,7 +114,9 @@
     </div>
     <script src="assets/libs/floating-label.min.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        window.addEventListener("load", function() {
+            document.querySelector("#load-box").classList.add("loaded");
+
             function setLightTheme() {
                 document.documentElement.style.setProperty('--text-color', '#212529');
                 document.documentElement.style.setProperty('--secondary-color', '#5f5f5f');
