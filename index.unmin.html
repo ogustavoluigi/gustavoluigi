@@ -115,7 +115,9 @@
     <script src="assets/libs/floating-label.min.js"></script>
     <script>
         window.addEventListener("load", function() {
-            document.querySelector("#load-box").classList.add("loaded");
+            let loadBox = document.querySelector("#load-box");
+            loadBox.classList.add("loaded");
+            setTimeout(() => loadBox.style.display = "none", 300);
 
             function setLightTheme() {
                 document.documentElement.style.setProperty('--text-color', '#212529');
