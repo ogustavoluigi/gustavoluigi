@@ -191,12 +191,15 @@
                 }
                 btnSendMessage.innerHTML = `<i style="color: var(--color-white-lighten);" class="fa fa-circle-o-notch fa-spin"></i>&nbsp;Enviando`;
 
-                fetch(url, {method: "POST", headres: { "Content-Type": "application/json" }, body: JSON.stringify({
-                    email: emailField.getVal(),
-                    message: messageField.getVal()
-                })}).then(response => response.json()).then(response => {
+                fetch("https://api.airtable.com/v0/appax0bFR1zlJCufl/tbl566geDkQO0TT3Q", {method: "POST", headers: { "Content-Type": "application/json", "Authorization": "Bearer patzUyqb204Ipqunp.deac9002a07a55a2974a8949f09428ca4fadb8311c9486205839a817ae09fabe" }, body: JSON.stringify({
+                records: [{
+                    fields: {
+                        Email: emailField.getVal(),
+                        Mensagem: messageField.getVal()
+                    }
+                }]})}).then(response => response.json()).then(response => {
                     btnSendMessage.disabled = false;
-                    if (response.success) {
+                    if (response.records) {
                         emailField.setVal("");
                         messageField.setVal("");
                         btnSendMessage.innerHTML = `Mensagem Enviada`;
