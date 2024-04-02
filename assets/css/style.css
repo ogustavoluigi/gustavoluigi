@@ -1,6 +1,7 @@
 :root {
     /* colors */
     --primary-color: #0071eb;
+    --emphasis-color: #149eca;
     --background-color: #ffffff;
     --card-color: #eceff1;
     --text-color: #212529;
@@ -70,9 +71,14 @@ a:hover {
 }
 
 .subtitle {
+    display: inline !important;
     font-size: 1.4rem;
-    color: var(--primary-color);
     font-weight: 700;
+    line-height: 1.3;
+    background: linear-gradient(45deg, var(--primary-color), var(--emphasis-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
 .paragraph {
@@ -363,5 +369,9 @@ main {
 
     .paragraph {
         line-height: 1.4;
+    }
+
+    .subtitle {
+        color: var(--primary-color);
     }
 }
