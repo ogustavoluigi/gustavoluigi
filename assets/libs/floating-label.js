@@ -37,7 +37,7 @@ class FloatingLabel {
             .master-field {
                 display: block;
                 width: 100%;
-                background: var(--card-color);
+                background: rgba(var(--secondary-color-rgb), .15);
                 border-radius: 6px;
                 padding: 10px;
                 cursor: text;
