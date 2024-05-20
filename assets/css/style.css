@@ -307,6 +307,12 @@ main {
     }
 }
 
+@media (min-width: 375px) {
+    .container {
+        max-width: 350px;
+    }
+}
+
 @media (min-width: 576px) {
     .container {
         max-width: 540px;
