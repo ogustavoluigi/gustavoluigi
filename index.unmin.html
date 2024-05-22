@@ -156,7 +156,7 @@
         window.addEventListener("load", function() {
             let loadBox = document.querySelector("#load-box");
             loadBox.classList.add("loaded");
-            setTimeout(() => loadBox.style.display = "none", 300);
+            loadBox.addEventListener("transitionend", () => loadBox.style.display = "none", { once: true });
 
             function setLightTheme() {
                 document.documentElement.style.setProperty('color-scheme', 'light');
