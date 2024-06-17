@@ -189,6 +189,16 @@ main {
     margin-left: auto
 }
 
+#contacts-box {
+    position: sticky;
+    top: var(--medium-spacing);
+    height: fit-content;
+    margin-bottom: var(--medium-spacing);
+    padding: var(--small-spacing) var(--x-small-spacing) var(--x-small-spacing) var(--x-small-spacing);
+    background-color: var(--background-color);
+    border: 1px solid rgba(var(--secondary-color-rgb), .15);
+}
+
 #contacts {
     display: flex;
     flex-flow: column;
@@ -384,5 +394,10 @@ main {
 
     .subtitle {
         color: var(--primary-color);
+    }
+
+    #contacts-box {
+        padding: 0 !important;
+        border: none;
     }
 }
