@@ -184,7 +184,24 @@
                 document.documentElement.style.setProperty('--background-color-rgb', '33, 37, 41');
             }
 
-            document.querySelector("#toggle-theme-button").addEventListener("click", function() {
+            let activeTheme = localStorage.getItem('theme');
+            if (!activeTheme) {
+                if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    setDarkTheme();
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    setLightTheme();
+                    localStorage.setItem('theme', 'light');
+                }
+                activeTheme = localStorage.getItem('theme');
+            }
+
+            if (activeTheme == "dark") setDarkTheme();
+            else setLightTheme();
+
+            let toggleThemeButton = document.querySelector("#toggle-theme-button");
+
+            toggleThemeButton.addEventListener("click", function() {
                 let currentTheme = this.getAttribute("data-theme");
                 if (currentTheme == "light") {
                     this.setAttribute("data-theme", "dark");
@@ -193,14 +210,44 @@
                         <path d="M7 6a10.994 10.994 0 0 0 12.56 10.89C17.95 19.36 15.17 21 12 21a9 9 0 0 1-9-9c0-3.17 1.64-5.95 4.11-7.56C7.04 4.95 7 5.47 7 6Z" stroke="#currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                     </svg>`;
                     setDarkTheme();
+                    localStorage.setItem('theme', 'dark');
                 } else if (currentTheme == "dark") {
                     this.setAttribute("data-theme", "light");
                     this.innerHTML = `<svg width="30" height="30" xmlns="http://www.w3.org/2000/svg">
                         <path d="M14.5 19.938a5.438 5.438 0 1 0 0-10.876 5.438 5.438 0 0 0 0 10.876Zm0 1.812a7.25 7.25 0 1 1 0-14.5 7.25 7.25 0 0 1 0 14.5Zm0-19.938a.906.906 0 0 1 .906.907V4.53a.906.906 0 1 1-1.812 0V2.72a.906.906 0 0 1 .906-.906Zm0 21.75a.906.906 0 0 1 .906.907v1.812a.906.906 0 1 1-1.812 0V24.47a.906.906 0 0 1 .906-.907ZM5.528 5.529a.906.906 0 0 1 1.282 0L8.09 6.81A.906.906 0 1 1 6.81 8.09L5.528 6.81a.906.906 0 0 1 0-1.282ZM20.91 20.91a.906.906 0 0 1 1.281 0l1.282 1.281a.906.906 0 0 1-1.282 1.282L20.91 22.19a.906.906 0 0 1 0-1.281ZM1.813 14.5a.906.906 0 0 1 .906-.906H4.53a.906.906 0 1 1 0 1.812H2.72a.906.906 0 0 1-.906-.906Zm21.75 0a.906.906 0 0 1 .906-.906h1.812a.906.906 0 1 1 0 1.812H24.47a.906.906 0 0 1-.907-.906ZM5.527 23.472a.906.906 0 0 1 0-1.282L6.81 20.91A.906.906 0 0 1 8.09 22.19L6.81 23.472a.906.906 0 0 1-1.282 0ZM20.91 8.09a.906.906 0 0 1 0-1.281l1.281-1.282a.907.907 0 0 1 1.282 1.282L22.19 8.09a.906.906 0 0 1-1.281 0Z" fill="#currentColor"></path>
                     </svg>`;
                     setLightTheme();
+                    localStorage.setItem('theme', 'light');
                 }
             });
+
+            if (activeTheme) {
+                if (activeTheme == "dark") {
+                    toggleThemeButton.setAttribute("data-theme", "dark");
+                    toggleThemeButton.innerHTML = `<svg width="22" height="25" xmlns="http://www.w3.org/2000/svg">
+                        <path d="m15.22 6.03 2.53-1.94L14.56 4 13.5 1l-1.06 3-3.19.09 2.53 1.94-.91 3.06 2.63-1.81 2.63 1.81-.91-3.06ZM19.61 12.25 21.25 11l-2.06-.05L18.5 9l-.69 1.95-2.06.05 1.64 1.25-.59 1.98 1.7-1.17 1.7 1.17-.59-1.98Z" fill="#currentColor"></path>
+                        <path d="M7 6a10.994 10.994 0 0 0 12.56 10.89C17.95 19.36 15.17 21 12 21a9 9 0 0 1-9-9c0-3.17 1.64-5.95 4.11-7.56C7.04 4.95 7 5.47 7 6Z" stroke="#currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>`;
+                } else {
+                    toggleThemeButton.setAttribute("data-theme", "light");
+                    toggleThemeButton.innerHTML = `<svg width="30" height="30" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.5 19.938a5.438 5.438 0 1 0 0-10.876 5.438 5.438 0 0 0 0 10.876Zm0 1.812a7.25 7.25 0 1 1 0-14.5 7.25 7.25 0 0 1 0 14.5Zm0-19.938a.906.906 0 0 1 .906.907V4.53a.906.906 0 1 1-1.812 0V2.72a.906.906 0 0 1 .906-.906Zm0 21.75a.906.906 0 0 1 .906.907v1.812a.906.906 0 1 1-1.812 0V24.47a.906.906 0 0 1 .906-.907ZM5.528 5.529a.906.906 0 0 1 1.282 0L8.09 6.81A.906.906 0 1 1 6.81 8.09L5.528 6.81a.906.906 0 0 1 0-1.282ZM20.91 20.91a.906.906 0 0 1 1.281 0l1.282 1.281a.906.906 0 0 1-1.282 1.282L20.91 22.19a.906.906 0 0 1 0-1.281ZM1.813 14.5a.906.906 0 0 1 .906-.906H4.53a.906.906 0 1 1 0 1.812H2.72a.906.906 0 0 1-.906-.906Zm21.75 0a.906.906 0 0 1 .906-.906h1.812a.906.906 0 1 1 0 1.812H24.47a.906.906 0 0 1-.907-.906ZM5.527 23.472a.906.906 0 0 1 0-1.282L6.81 20.91A.906.906 0 0 1 8.09 22.19L6.81 23.472a.906.906 0 0 1-1.282 0ZM20.91 8.09a.906.906 0 0 1 0-1.281l1.281-1.282a.907.907 0 0 1 1.282 1.282L22.19 8.09a.906.906 0 0 1-1.281 0Z" fill="#currentColor"></path>
+                    </svg>`;
+                }
+            } else {
+                if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    toggleThemeButton.setAttribute("data-theme", "dark");
+                    toggleThemeButton.innerHTML = `<svg width="22" height="25" xmlns="http://www.w3.org/2000/svg">
+                        <path d="m15.22 6.03 2.53-1.94L14.56 4 13.5 1l-1.06 3-3.19.09 2.53 1.94-.91 3.06 2.63-1.81 2.63 1.81-.91-3.06ZM19.61 12.25 21.25 11l-2.06-.05L18.5 9l-.69 1.95-2.06.05 1.64 1.25-.59 1.98 1.7-1.17 1.7 1.17-.59-1.98Z" fill="#currentColor"></path>
+                        <path d="M7 6a10.994 10.994 0 0 0 12.56 10.89C17.95 19.36 15.17 21 12 21a9 9 0 0 1-9-9c0-3.17 1.64-5.95 4.11-7.56C7.04 4.95 7 5.47 7 6Z" stroke="#currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>`;
+                } else {
+                    toggleThemeButton.setAttribute("data-theme", "light");
+                    toggleThemeButton.innerHTML = `<svg width="30" height="30" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.5 19.938a5.438 5.438 0 1 0 0-10.876 5.438 5.438 0 0 0 0 10.876Zm0 1.812a7.25 7.25 0 1 1 0-14.5 7.25 7.25 0 0 1 0 14.5Zm0-19.938a.906.906 0 0 1 .906.907V4.53a.906.906 0 1 1-1.812 0V2.72a.906.906 0 0 1 .906-.906Zm0 21.75a.906.906 0 0 1 .906.907v1.812a.906.906 0 1 1-1.812 0V24.47a.906.906 0 0 1 .906-.907ZM5.528 5.529a.906.906 0 0 1 1.282 0L8.09 6.81A.906.906 0 1 1 6.81 8.09L5.528 6.81a.906.906 0 0 1 0-1.282ZM20.91 20.91a.906.906 0 0 1 1.281 0l1.282 1.281a.906.906 0 0 1-1.282 1.282L20.91 22.19a.906.906 0 0 1 0-1.281ZM1.813 14.5a.906.906 0 0 1 .906-.906H4.53a.906.906 0 1 1 0 1.812H2.72a.906.906 0 0 1-.906-.906Zm21.75 0a.906.906 0 0 1 .906-.906h1.812a.906.906 0 1 1 0 1.812H24.47a.906.906 0 0 1-.907-.906ZM5.527 23.472a.906.906 0 0 1 0-1.282L6.81 20.91A.906.906 0 0 1 8.09 22.19L6.81 23.472a.906.906 0 0 1-1.282 0ZM20.91 8.09a.906.906 0 0 1 0-1.281l1.281-1.282a.907.907 0 0 1 1.282 1.282L22.19 8.09a.906.906 0 0 1-1.281 0Z" fill="#currentColor"></path>
+                    </svg>`;
+                }
+            }
 
             let contactForm = document.querySelector("#contact-form");
             let emailField = new FloatingLabel(contactForm.email);
